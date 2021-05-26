@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{%load static%}
+{% comment %} <!DOCTYPE html>
+<html>
+<head> {% endcomment %}
+{% block head %}
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{%static 'signup.css'%}">
+{% comment %} </head> {% endcomment %}
+{% endblock head %}
+
+{% comment %} <body> {% endcomment %}
+{% block body %}
+    <div class="wrapper">
+        <div id="formContent">
+            <div class="partition1">
+                <img src="{%static 'ph4.jpeg'%}" alt="">
+            </div>
+            <div class="partition2">
+                <!-- Tabs Titles -->
+                <h2 class="inactive underlineHover"><button onclick="window.location.href='http://127.0.0.1:8000/login';">Sign
+                        In</button></h2>
+                <h2 class="active"><button onclick="window.location.href='#link_here';">Sign Up</button></h2>
+
+                <!-- Icon -->
+                <div class="first">
+                    <img src="{%static 'bits_logo.png'%}" id="icon" alt="User Icon">
+                </div>
+
+                <!-- Login Form -->
+                <form method="POST" action="/signup">
+                    {% csrf_token %}
+                    <input type="text" id="username" class="second" name="username" placeholder="Username">
+                    <input type="email" id="email" class="second" name="email" placeholder="Email Address">
+                    <input type="password" id="password1" class="third" name="password1" placeholder="Password">
+                    <input type="password" id="password2" class="fifth" name="password2" placeholder="Confirm Password">
+                    <input type="submit" class="fourth" value="Sign Up">
+                </form>
+            </div>
+        </div>
+    </div>
+{% comment %} </body> {% endcomment %}
+{% endblock body %}
+
+{% comment %} </html> {% endcomment %}

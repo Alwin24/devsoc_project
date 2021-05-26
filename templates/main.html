@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<title> Main Page </title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'mainstyle.css' %}">
+{% endblock head %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">INVENTORY</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">AboutUs</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Account
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Sign In</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign Up</a></li>
+                        <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                    </ul>
+                </li>
+                <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="logout">Logout</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<form method="POST" action="/home" class="info">
+    {% csrf_token %}
+    <h1>enter item</h1>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Item name" id="item_name" name="item_name">
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Serial number" id="serial" name="serial">
+        <span class="input-group-text" id="basic-addon2">#123-345</span>
+    </div>
+
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Rs :</span>
+        <input type="text" placeholder="Price per item" class="form-control" id="price" name="price">
+        <span class="input-group-text">.00</span>
+    </div>
+
+    <div class="input-group ">
+        <input type="text" class="form-control" placeholder="Quantity" id="quantity" name="quantity">
+    </div>
+
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-dark" for="btnradio1">SECTION 1</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-dark" for="btnradio2">SECTION 2</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn btn-outline-dark" for="btnradio3">SECTION 3</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+        <label class="btn btn-outline-dark" for="btnradio4">SECTION 4</label>
+
+    </div>
+    <input type="button" class="btn btn-primary btn-lg" id="enter" value="Enter">
+
+</form>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+{% endblock body %}

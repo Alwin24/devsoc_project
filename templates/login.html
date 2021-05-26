@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{%load static%}
+{% comment %} <!DOCTYPE html>
+<html>
+  <head> {% endcomment %}
+  {% block head %}
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{%static 'loginform.css'%}"> 
+  {% comment %} </head> {% endcomment %}
+  {% endblock head %}
+
+  {% comment %} <body> {% endcomment %}
+  {% block body %}
+    <div class="wrapper">
+      <div id="formContent">
+        <div class="partition1">
+          <img src="{%static 'inventory2.png'%}" alt="" />
+        </div>
+        <div class="partition2">
+          <!-- Tabs Titles -->
+          <h2 class="active">Sign In</h2>
+          <h2 class="inactive underlineHover">
+            <button onclick="window.location.href='signup';">
+              Sign Up
+            </button>
+          </h2>
+
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <img src="{%static 'bits_logo.png'%}" id="icon" alt="User Icon" />
+          </div>
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+          <!-- Login Form -->
+          <form method="POST" action="/login">
+            {% csrf_token %}
+            <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username"/>
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password"/>
+            <input type="submit" class="fadeIn fourth" value="Sign In" />
+          </form>
+
+          <!-- Forgot Password -->
+          <div id="formFooter">
+                    <a class="underlineHover" href="link">Forgot Password?</a>
+                </div>
+        </div>
+      </div>
+    </div>
+  {% comment %} </body> {% endcomment %}
+  {% endblock body %}
+{% comment %} </html> {% endcomment %}

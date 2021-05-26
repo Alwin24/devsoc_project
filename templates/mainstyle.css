@@ -1,0 +1,53 @@
+html,body{
+    margin:0px;
+    height: 100%;
+}
+.info { 
+    height: 100%;
+    background: url('https://supplychainbeyond.com/wp-content/uploads/2019/12/supply-chain-warehouse-inventory-and-asset-visibility-and-tracking.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+   
+    align-items: flex-start;  
+  }
+  /* form{
+    width: 50%;
+    margin: 10px;
+    padding-right: 10px;
+  } */
+  .input-group {
+    position: relative;
+    top: 15vh;
+    margin: 0 0 0 2vw;
+    max-width: 35%;
+  }
+  .btn-group{
+    position: relative;
+    top:20vh;
+    left:3vw ;
+  }
+  h1{
+    position: relative;
+    top: 12vh;
+    margin: 0 0 0 2vw;
+    text-transform: uppercase;
+    text-decoration: underline; 
+    font-weight: 700;   
+  }
+  #enter{
+    position: relative;
+    top: 22vh;
+    margin: 0 0 0 15vw;
+  }
+  .btn-group .btn{
+      background-color: white;
+  }
+  .btn-group .btn:hover{
+    transform: scale(1.05);
+    color: black;
+  }
